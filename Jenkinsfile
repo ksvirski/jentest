@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                bat 'echo "Fail!"; exit 1'
+                bat dotnet restore
+		bat dotnet build --configuration "Release"
+		bat dotnet publish --configuration "Release" src/Website/Website.csproj  --output published-website
             }
         }
     }
