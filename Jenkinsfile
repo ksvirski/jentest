@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                bat dotnet restore
-		bat dotnet build --configuration "Release"
-		bat dotnet publish --configuration "Release" src/Website/Website.csproj  --output published-website
+                bat 'dotnet restore'
+		bat 'dotnet build --configuration "Release"'
+		bat 'dotnet publish --configuration "Release" src/Website/Website.csproj  --output published-website'
             }
         }
     }
