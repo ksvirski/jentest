@@ -5,7 +5,7 @@ pipeline {
             steps {
                 bat 'dotnet restore'
 		bat 'dotnet build --configuration "Release"'
-		bat 'dotnet publish --configuration "Release" src/Website/Website.csproj  --output published-website'
+		bat 'dotnet publish --configuration "Release" jentest.csproj  --output published-website'
             }
         }
     }
